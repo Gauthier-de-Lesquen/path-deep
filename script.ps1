@@ -10,8 +10,8 @@ ForEach-Object {
 
     $processed++
 
-    # Barre de progression basée uniquement sur la vitesse (incrément)
-    # Ce n’est pas un pourcentage réel faute de total connu
+    # Progress bar
+    # not a real percentage
     $percent = ($processed % 100)
     $filled = [math]::Floor($percent * $barSize / 100)
     $empty = $barSize - $filled
@@ -19,7 +19,7 @@ ForEach-Object {
 
     Write-Host -NoNewline "`r$bar  dossiers traités : $processed"
 
-    # Calcul profondeur
+    # deep calculating
     $path = $_.FullName
     $depth = ($path.Split("\") | Where-Object { $_ -ne "" }).Count
 
@@ -29,7 +29,7 @@ ForEach-Object {
     }
 }
 
-Write-Host "`nTerminé."
-Write-Host "Chemin le plus profond :"
+Write-Host "`nFinished."
+Write-Host "Deepest path :"
 Write-Host $deepestPath
-Write-Host "Nombre de dossiers : $maxDepth"
+Write-Host "Number of directories: $maxDepth"
