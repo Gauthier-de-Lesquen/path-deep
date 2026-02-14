@@ -17,7 +17,7 @@ ForEach-Object {
     $empty = $barSize - $filled
     $bar = "[" + ("#" * $filled) + (" " * $empty) + "]"
 
-    Write-Host -NoNewline "`r$bar  dossiers traités : $processed"
+    Write-Host -NoNewline "`r$bar  processed folders : $processed"
 
     # deep calculating
     $path = $_.FullName
